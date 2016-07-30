@@ -27,9 +27,7 @@ kubectl create secret generic kubebot --from-literal=token=<your_token_here> --f
 
 ### Create a kubebot Deployment
 
-Then, create the following kubebot Deployment that consumes the secret you just created, and that’s it!
-
-Open the (kubebot-deployment.yaml)[kubebot-deployment.yaml] file and modify the kubebot container environment variables to control things like who the kubebot will listen to, and what valid kubectl commands are allowed.
+Open the [kubebot-deployment.yaml](kubebot-deployment.yaml) file and modify the kubebot container environment variables to control things like who the kubebot will listen to, and what valid kubectl commands are allowed.
 
 ```yaml
 apiVersion: extensions/v1beta1
@@ -73,6 +71,7 @@ spec:
           value: "get describe scale"
 ```
 
+Then, create the kubebot [Deployment](http://kubernetes.io/docs/user-guide/deployments/) that consumes the secret you just created, and that’s it!
 
 ```console
 $ kubectl create -f kubebot-deployment.yaml
