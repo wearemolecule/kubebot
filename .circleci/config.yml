@@ -20,7 +20,7 @@ jobs:
     working_directory: /go/src/github.com/molecule/kubebot
     steps:
       - checkout
-      - setup_remote_docker
+      - setup_remote_docker:
           version: 18.01.0-ce
       # specify any bash command here prefixed with `run: `
       - run: go get -v -t -d ./...
